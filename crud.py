@@ -25,6 +25,7 @@ def create_movie(title, overview, release_date, poster_path):
 
     return movie
 
+
 #create_movie('The Crow', 'Crows on my front yard', '2022-01-01', 'http://google.com')
 def create_rating(score, movie, user):
     """Create and return a new rating."""
@@ -37,7 +38,19 @@ def create_rating(score, movie, user):
 
     return rating
 
+
+#return all movies
+def return_all_movies():
+    """Query to list all movies"""
+    return Movie.query.all()
+
+def get_movie_by_id(id):
+    """Query movie by ID"""
+    return Movie.query.get(id)
+
 # create_rating(100, 1, 1)
+
+
 
 if __name__ == '__main__':
     from server import app
