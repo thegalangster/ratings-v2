@@ -48,9 +48,17 @@ def get_movie_by_id(id):
     """Query movie by ID"""
     return Movie.query.get(id)
 
-# create_rating(100, 1, 1)
+#return all users
+def return_all_users():
+    """Query to list all users"""
+    return User.query.all()
 
+def get_user_by_id(id):
+    """Query user by ID"""
+    return User.query.get(id)
 
+def get_user_by_email(email):
+    return User.query.filter_by(email=email).first()
 
 if __name__ == '__main__':
     from server import app

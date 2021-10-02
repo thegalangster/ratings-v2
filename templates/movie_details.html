@@ -4,10 +4,18 @@
 
 {% block body %}
 <h1>{{ movie.title }}</h1>
-
 <p>
   {{ movie.overview }}
 </p>
+
+<form action="/movies/{{ movie.movie_id }}/rate" method="POST">
+  <p>
+    Rate this Movie <input type="text" name="score" placeholder="Write a number 0-100">
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+</form>
 
 <img src="{{ movie.poster_path }}">
 {% endblock %}
